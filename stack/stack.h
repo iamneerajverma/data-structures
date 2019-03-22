@@ -40,3 +40,13 @@ int pop(struct Stack* stack){
 		return stack->array[stack->top--];
 	}
 }
+
+int peek(struct Stack* stack){
+	if (isEmpty(stack)){
+		printf("Stack underflow!.\n");
+		return INT_MIN;
+	} else{
+		return stack->array[stack->top];
+	}
+}
+
