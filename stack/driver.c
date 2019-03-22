@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include "stack.h"
+#include "stackll.h"
 
 int generateRandomNumber(int max){
 	int value = rand()%max;
@@ -15,7 +15,7 @@ int main(){
 	printf("\n\nPlease enter max value range  _-_-_-   ");
 	scanf("%d",&max);
 	printf("\n\n");
-	struct Stack* stack = createStack(capacity);
+	struct Stack* stack = createStack();
 	for(counter = 0; counter != capacity; counter++){
 		push(stack, generateRandomNumber(max));
 	}
