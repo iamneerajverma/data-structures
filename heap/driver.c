@@ -1,12 +1,6 @@
 #include<stdio.h>
 #include "heap.h"
 
-int generateRandomNumber(int max){
-	int value = rand()%max;
-	printf("%d  ", value);
-	return value;
-}
-
 int main(){
 	int capacity, max, count;
 	printf("Please Enter size for the Heap:  _-_-_-   ");

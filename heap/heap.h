@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include "../commons/numbers.h"
 
 struct Heap{
 	int capacity;
@@ -35,12 +36,6 @@ int right(int index){
 	return (2 * index) + 2;
 }
 
-void swap(int *a, int *b){
-	int temp = *a;
-	*a = *b;
-	*b = temp;
-}
-
 void insert(struct Heap* heap, int value){
 	if (heap == NULL){
 		printf("Heap is not defined\n");
@@ -57,11 +52,7 @@ void insert(struct Heap* heap, int value){
 }
 
 void traverse(struct Heap* heap){
-	int size = heap->size;
-	while(size != 0){
-		printf("%d  ", heap->data[heap->size-(size--)]);
-	}
-	printf("\n\nTraversal Complete\n\n");
+	traverseArray(heap->data, heap->size);
 }
 
 void heapify(struct Heap* heap, int index){
