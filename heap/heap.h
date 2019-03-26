@@ -82,8 +82,8 @@ void heapify(struct Heap* heap, int index){
 int getRootElement(struct Heap* heap){
 	int value = heap->data[0];
 	swap(&heap->data[0], &heap->data[heap->size - 1]);
-	heapify(heap, 0);
 	heap->size--;
+	heapify(heap, 0);
 	return value;
 }
 
