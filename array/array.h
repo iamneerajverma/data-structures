@@ -22,6 +22,27 @@ void bubbleSortArray(int *array, int size){
 	}
 }
 
+void insertionSortArray(int *array, int size){
+	for (int i=1; i<size; i++)
+		for(int j=i-1; j>=0; j--)
+			if (array[j] > array[j+1])
+				swap(&array[j], &array[j+1]);
+			else
+				break;
+}
+
+void selectionSortArray(int *array, int size){
+	for (int i=0; i<size-1; i++){
+		int min = i;
+		for (int j=i+1; j<size; j++)
+			if (array[j] < array[min]){
+				min = j;
+			}
+		if (min != i)
+			swap(&array[i], &array[min]);
+	}
+}
+
 int isArraySorted(int *array, int size){
 	for (int i=0; i<size-1; i++){
 		if (array[i] <= array[i+1]){
